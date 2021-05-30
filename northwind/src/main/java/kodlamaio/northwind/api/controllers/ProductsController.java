@@ -14,6 +14,7 @@ import kodlamaio.northwind.business.abstracts.ProductService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.entities.concretes.Product;
+import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 
 @RestController //sen bir controllersin demek
 @RequestMapping("/api/products") //angulardaki newPath görevi gibi 
@@ -31,6 +32,11 @@ public class ProductsController {
 	@GetMapping ("/getall") //HttpGet görevi gibi sanki
 	public DataResult<List<Product>> getAll(){
 		return this.productService.getAll();
+	}
+	
+	@GetMapping ("/getProductWithCategoryDetails") //9. ders dto işlemi
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+		return this.productService.getProductWithCategoryDetails();
 	}
 	
 	
@@ -71,6 +77,8 @@ public class ProductsController {
 	public DataResult<List<Product>> getAllSorted() {
 		return this.productService.getAllSorted();
 	}
+	
+	
 	
 	
 }

@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+@Data //getters ve setters ekler
 @Entity
 @Table(name="products")  //bu class hangi tabloya ait
 @AllArgsConstructor //tüm argümanları kullanarak constructor ekle demek
